@@ -1,14 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {
-  GoogleAuthProvider,
-  getAuth,
-  signInWithPopup,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-  sendPasswordResetEmail,
-  signOut,
-} from "firebase/auth";
+import { GoogleAuthProvider, getAuth } from "firebase/auth";
+
 import { getStorage } from "firebase/storage";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -21,28 +14,22 @@ import { getStorage } from "firebase/storage";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 const app = initializeApp({
-  apiKey: "AIzaSyBjnt3ZXqbqCJBvteZ7z9A06Lic5cy2WMo",
-
-  authDomain: "berealocated-dda07.firebaseapp.com",
-
-  projectId: "berealocated-dda07",
-
-  storageBucket: "berealocated-dda07.appspot.com",
-
-  messagingSenderId: "219068664892",
-
-  appId: "1:219068664892:web:c7c6a69c94b49496f34739",
-
-  measurementId: "G-8YGHPE2HJ3"
+  apiKey: "AIzaSyBwno8kHaLKGg9_Y4iGuKo8-Hpx2rd8Z6s",
+  authDomain: "berealocated-58df8.firebaseapp.com",
+  projectId: "berealocated-58df8",
+  storageBucket: "berealocated-58df8.appspot.com",
+  messagingSenderId: "39257330305",
+  appId: "1:39257330305:web:b949fea51c6a3e8d233380",
+  measurementId: "G-EBYFYRV1SF"
 
 });
 
 const auth = getAuth(app);
-export { auth };
-
-const googleProvider = new GoogleAuthProvider();
 
 
+var provider = new GoogleAuthProvider();
+
+export { auth, provider };
 // Initialize Firebase
 const storage = getStorage(app);
 export default storage;
