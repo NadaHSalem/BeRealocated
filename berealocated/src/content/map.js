@@ -1,8 +1,5 @@
 import React from "react";
 import GoogleMapReact from 'google-map-react';
-
-const comp = ({ text }) => <div>{text}</div>;
-
 export default function SimpleMap(){
   const defaultProps = {
     center: {
@@ -13,9 +10,9 @@ export default function SimpleMap(){
   };
 
   return (
-    <div style={{ height: '100vh', width: '100%' }}>
+    <div style={{ height: '500px', width: '100%' }}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "" }}
+        bootstrapURLKeys={{ key: "https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly        " }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
       >

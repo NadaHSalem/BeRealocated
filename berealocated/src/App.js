@@ -67,9 +67,7 @@ function App() {
                     </Route>
                 </Routes>
             </BrowserRouter>
-            <input type="file" onChange={handleChange} accept="/image/*" />
-            <button onClick={handleUpload}>Upload to Firebase</button>
-            <p>{percent} "% done"</p>
+
         </div>
     );
 }

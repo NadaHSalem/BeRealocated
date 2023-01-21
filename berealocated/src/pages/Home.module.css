@@ -1,9 +1,10 @@
-.container{
+.container {
     display: block;
     align-items: center;
     text-align: center;
 }
-.capture{
+
+.capture {
     background-color: white;
     color: white;
     border-radius: 100%;
@@ -13,10 +14,12 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
 }
-.capture:hover{
+
+.capture:hover {
     background-color: gray;
 }
-.outercircle{
+
+.outercircle {
     position: relative;
     width: fit-content;
     margin: auto;
@@ -25,21 +28,32 @@
     border-color: white;
 }
 
-.retake{
+.retake {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: black;
     border-radius: 100%;
     color: white;
     position: fixed;
     left: 10px;
-    top:21;
+    top: 21;
 
 }
-.retake:hover{
+
+.retake:hover {
     color: grey;
 }
-.camera{
+
+.camera {
     border-radius: 10%;
     display: block;
     padding-bottom: 2%;
+}
+
+.send{
+    border-radius: 90%;
+    width: 60px;
+    height: 60px;
+}
+.send:hover{
+    color: gray;
 }
