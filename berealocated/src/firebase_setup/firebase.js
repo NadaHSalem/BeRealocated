@@ -1,8 +1,7 @@
 // Import the functions you need from the SDKs you need
 
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getFirestore } from "@firebase/firestore"
+import { getStorage } from "firebase/storage";
 
 // TODO: Add SDKs for Firebase products that you want to use
 
@@ -13,18 +12,24 @@ import { getFirestore } from "@firebase/firestore"
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDZH_-8EiEtXuzRL0FlFfk2ueSgXzf6FsI",
-  authDomain: "berealocated-4370a.firebaseapp.com",
-  projectId: "berealocated-4370a",
-  storageBucket: "berealocated-4370a.appspot.com",
-  messagingSenderId: "567628595005",
-  appId: "1:567628595005:web:c271ac0a3b97680d2f0f54",
-  measurementId: "G-57VPKRXTYP"
-};
+const app = initializeApp({
+  apiKey: "AIzaSyBjnt3ZXqbqCJBvteZ7z9A06Lic5cy2WMo",
+
+  authDomain: "berealocated-dda07.firebaseapp.com",
+
+  projectId: "berealocated-dda07",
+
+  storageBucket: "berealocated-dda07.appspot.com",
+
+  messagingSenderId: "219068664892",
+
+  appId: "1:219068664892:web:c7c6a69c94b49496f34739",
+
+  measurementId: "G-8YGHPE2HJ3"
+
+});
 
 // Initialize Firebase
 
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-export const firestore = getFirestore(app)
+const storage = getStorage(app);
+export default storage;
