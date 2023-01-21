@@ -42,4 +42,21 @@
 }
 
 
+.profile{
+    background-color: wheat;
+    border-color: white;
+    border: 10px;
+    border-radius: 100%;
+    top: 40px;
+    right: 45px;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    display: inline;
+    color: white;
+
+
+}
+
+
 

@@ -6,6 +6,7 @@ import './index.css';
 import Home from './pages/Home';
 import Explore from './pages/Explore';
 import Nav from './content/Nav';
+import Profile from './pages/Profile'
 import reportWebVitals from './reportWebVitals';
 import MyTask from './pages/MyTask';
 import { useState } from "react";
@@ -62,6 +63,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Nav />}>
                         <Route index element={<Home />} />
+                        <Route path ="profile" element={<Profile />}/>
                         <Route path="Explore" element={<Explore />} />
                         <Route path="MyTask" element={<MyTask />} />
                     </Route>

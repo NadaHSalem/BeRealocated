@@ -1,11 +1,11 @@
 import { Outlet, Link } from "react-router-dom";
 import styles from "./Nav.module.css"
-import logo from "./BeRealocated.png";
 const Nav = () => {
     return(
         <div>
-            <div className={styles.logo}>
-            </div>
+            <div className={styles.logo}></div>
+            <Link to= "profile"><div className={styles.profile}></div></Link>
+
             <div className={styles.navbar}>
             <Link className={styles.navitem} to="/">My Friends
             </Link>
