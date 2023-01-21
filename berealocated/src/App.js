@@ -33,8 +33,10 @@ function App() {
                     </Route>
                 </Routes>
             </BrowserRouter>
-            <input type="file" accept="image/*" onChange={handleChange}/>
-            <button>Upload to Firebase</button>
+            <form onSubmit={submithandler}>
+                    <input type="text" ref={dataRef} />
+                    <button type="submit">Save</button>
+                </form>
         </div>
     );
 }
