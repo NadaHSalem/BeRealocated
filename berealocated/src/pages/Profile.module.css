@@ -1,0 +1,19 @@
+.profile{
+    display: block;
+    width: 50%;
+    margin: auto;
+    color: white;
+    padding-right: 5px;
+    text-align: center;
+}
+
+.text{
+    display: block;
+    width: 50%;
+    margin: auto;
+}
+
+.signin{
+    width: 80px;
+    height: 20px;
+}
