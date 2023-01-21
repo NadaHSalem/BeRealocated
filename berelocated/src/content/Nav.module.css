@@ -1,0 +1,11 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.navitem{
+    display: inline;
+    color: black;
+    font-style: normal;
+}
