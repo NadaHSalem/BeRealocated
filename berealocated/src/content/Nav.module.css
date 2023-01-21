@@ -1,93 +1,45 @@
+.nav{
+    display: inline;
+}
 
 .navbar {
+    z-index: 2;
     text-decoration: none;
-    display: flex;
-    align-items: center;
+    font-family: "Arial", Arial, Sans-serif;
+    font-size: 100%;
+
+    display: inline-flexbox;
+    vertical-align: middle;
     text-align: center;
+    margin: auto;
+    margin-bottom: 4%;
+    width: 100%;
+
 }
 
 .navitem {
+    float:none;
     text-decoration: none;
-    display: inline;
     color: white;
     font-style: normal;
-}
-
-/* My Friends */
-.myfriends {
-    text-decoration: none;
-    display: inline-block;
-    position: absolute;
-    width: 100px;
-    height: 17px;
-
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 14px;
     text-align: center;
-
-    color: #FFFFFF;
+    padding-left: 10px;
+    padding-right: 10px;
 }
+
+
 
 /* Logo */
 .logo{
-position: absolute;
-width: 177px;
-height: 29px;
-left: 107px;
-top: 38px;
+    z-index: 2;
+    height: 70px;
+    width: 50%;
+    margin:auto;
+    background-image: url("./BeRealocated.png");
+    background-repeat: no-repeat;
+    background-size: contain;
 
-background: url("../../public/BeRealocated.png");
 }
 
-/* My Profile */
-.profile{
-position: absolute;
-width: 20px;
-height: 20px;
-left: 317px;
-top: 42px;
-
-background: #D9D9D9;
-}
-
-/* Explore */
-.explore{
-position: absolute;
-width: 100px;
-height: 17px;
-left: calc(50% - 100px/2 + 99px);
-top: calc(50% - 17px/2 - 332.5px);
-
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 14px;
-text-align: center;
-
-color: #FFFFFF;
-}
-
-
-/* My Task */
-.mytask{
-position: absolute;
-width: 100px;
-height: 17px;
-left: calc(50% - 100px/2 + 5px);
-top: calc(50% - 17px/2 - 332.5px);
-
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 14px;
-text-align: center;
-
-color: #FFFFFF;
-}
 
 

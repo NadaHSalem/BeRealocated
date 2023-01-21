@@ -1,0 +1,15 @@
+.e-calendar {
+    background-color: rgb(185, 253, 255);
+    border: 3px solid rgb(36, 76, 90);
+    font-family: sans-serif;
+    background-color: rgb(0, 26, 255);
+    border: 2px solid;
+    color: #212529;
+}
+
+.calendar-container {
+    width: 50%;
+    margin: auto;
+
+    align-content: center;
+}

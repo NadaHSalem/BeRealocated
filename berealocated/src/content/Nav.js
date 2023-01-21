@@ -1,14 +1,17 @@
 import { Outlet, Link } from "react-router-dom";
 import styles from "./Nav.module.css"
+import logo from "./BeRealocated.png";
 const Nav = () => {
     return(
-        <div className={styles.navbar}>
-            <div>
-            <Link className={styles.myfriends} to="/"><h1>My Friends</h1>
-            </Link>
+        <div>
+            <div className={styles.logo}>
             </div>
-            <div >
-            <Link className={styles.navitem} to="Explore"><h1>Explore</h1>
+            <div className={styles.navbar}>
+            <Link className={styles.navitem} to="/">My Friends
+            </Link>
+            <Link className={styles.navitem} to="Explore">Explore
+            </Link>
+            <Link className={styles.navitem} to="MyTask">My Task
             </Link>
             </div>
             <Outlet/>
