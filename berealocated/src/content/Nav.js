@@ -3,7 +3,6 @@ import styles from "./Nav.module.css"
 const Nav = () => {
     return(
         <div className={styles.navbar}>
-            <
             <div>
             <Link className={styles.myfriends} to="/"><h1>My Friends</h1>
             </Link>
