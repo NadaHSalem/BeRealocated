@@ -3,13 +3,18 @@ import Webcam from "react-webcam";
 import styles from "./Home.module.css";
 import storage from "../firebase_setup/firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-function Home() {
-
-    // progress
+const Home = () => {
+  var today = new Date();
+  const auth = getAuth();
+  var uid = ''
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      uid = user.email;
+    } 
+  });
     const [percent, setPercent] = useState(0);
-
-    // converts image to url file to be able to be uploaded to firebase
     function dataURLtoFile(dataurl, filename) {
       var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
           bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
@@ -18,55 +23,41 @@ function Home() {
           }
           return new File([u8arr], filename, {type:mime});
       }
-
-    // upload to firebase 
     const handleUpload = () => {
-      const file = dataURLtoFile(img, 'filename.png')
+      const file = dataURLtoFile(img, String(uid) + String(today.getMonth()) + String(today.getDate()) + '.png')
+      
       if (!file) {
           alert("Please upload an image first!");
       }
-
-      const storageRef = ref(storage, `/files/${file.name}`);
-
-      // progress can be paused and resumed. It also exposes progress updates.
-      // Receives the storage reference and the file to upload.
+      const storageRef = ref(storage, `/files/${uid}/${file.name}`);
       const uploadTask = uploadBytesResumable(storageRef, file);
-
       uploadTask.on(
           "state_changed",
           (snapshot) => {
               const percent = Math.round(
                   (snapshot.bytesTransferred / snapshot.totalBytes) * 100
               );
-
-              // update progress
               setPercent(percent);
           },
           (err) => console.log(err),
           () => {
-              // download url
               getDownloadURL(uploadTask.snapshot.ref).then((url) => {
                   console.log(url);
               });
           }
       );
   };
-
-
   const [img, setImg] = useState(null);
   const webcamRef = useRef(null);
-
   const videoConstraints = {
     width: 420,
     height: 420,
     facingMode: "user",
   };
-
   const capture = useCallback(() => {
     const imageSrc = webcamRef.current.getScreenshot();
     setImg(imageSrc);
   }, [webcamRef]);
-
   return (
     <div className={styles.container}>
       {img === null ? (
