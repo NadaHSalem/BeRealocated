@@ -4,6 +4,7 @@ import styles from "./Home.module.css";
 import storage from "../firebase_setup/firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import locations from "../content/locations";
 
 const Home = () => {
   var today = new Date();
