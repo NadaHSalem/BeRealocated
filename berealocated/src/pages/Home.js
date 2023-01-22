@@ -24,7 +24,7 @@ const Home = () => {
           return new File([u8arr], filename, {type:mime});
       }
     const handleUpload = () => {
-      const file = dataURLtoFile(img, String(uid) + String(today.getMonth()) + String(today.getDate()) + '.png')
+      const file = dataURLtoFile(img, String(today.getMonth()) + String(today.getDate()) + '.png')
       
       if (!file) {
           alert("Please upload an image first!");

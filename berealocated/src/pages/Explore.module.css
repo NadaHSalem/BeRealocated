@@ -1,0 +1,14 @@
+.image{
+    display: block;
+    width: 50%;
+    margin: auto;
+    font-size: large;
+    color: white;
+    text-align: center;
+}
+
+.body{
+    display: block;
+    width: 50%;
+    margin: auto;
+}
