@@ -1,28 +1,20 @@
 import React, { Component, useState } from 'react';
-
 import './cameraStyles.css'
-
 import Webcam from "react-webcam";
-
 
 const videoConstraints = {
     width: 220,
     height: 200,
     facingMode: "user"
   };
-  
   const WebcamCapture = () => {
-  
   const webcamRef = React.useRef(null);
-  
     const capture = React.useCallback(
       () => {
         const imageSrc = webcamRef.current.getScreenshot();
       },
-  
       [webcamRef]
     );
-  
     return (
       <div className="webcam-container">
         <Webcam

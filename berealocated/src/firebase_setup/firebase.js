@@ -29,7 +29,7 @@ const auth = getAuth(app);
 
 var provider = new GoogleAuthProvider();
 
-export { auth, provider };
+export { app, provider };
 // Initialize Firebase
 const storage = getStorage(app);
 export default storage;

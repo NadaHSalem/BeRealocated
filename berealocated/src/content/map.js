@@ -1,57 +1,44 @@
 import React from "react";
 import GoogleMapReact from 'google-map-react';
 import google from 'google-map-react';
-export default function SimpleMap(){
-  const defaultProps = {
-    center: {
-      lat: 10.99835602,
-      lng: 77.01502627
-    },
-    zoom: 11
-    
+import { Link } from "react-router-dom";
+import styles from "./map.module.css";
+import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+
+  const containerStyle = {
+    width: '500px',
+    height: '500px'
   };
+  const center = {
+    lat: 43.634657,
+      lng: -79.522378
+  };
+  function SimpleMap(props) {
+    const { isLoaded } = useJsApiLoader({
+      id: 'google-map-script',
+      googleMapsApiKey: "AIzaSyALF4Lazl_RdjGP5xn7t0CeHRru8vB2ml4"
+    })
+    const [map, setMap] = React.useState(null)
+    const onLoad = React.useCallback(function callback(map) {
+      const bounds = new window.google.maps.LatLngBounds(center);
+      map.fitBounds(bounds);
+      setMap(map)
+    }, [])
+    const onUnmount = React.useCallback(function callback(map) {
+      setMap(null)
+    }, [])
 
-  var southWest = new google.maps.LatLng(43.634657, -79.522378);
-    var northEast = new google.maps.LatLng(43.921647, -79.288726);
-    var lngSpan = northEast.lng() - southWest.lng();
-    var latSpan = northEast.lat() - southWest.lat();
-
-    var markers = [];
-
-    var myLatlng = new google.maps.LatLng(38.392303, -86.931067);
-
-    var map = new google.maps.Map(document.getElementById("map-canvas"), {
-        zoom: 4,
-        center: myLatlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
-
-    // Create some markers
-    for (var i = 1; i < 2; i++) {
-
-        var location = new google.maps.LatLng(southWest.lat() + latSpan * Math.random(), southWest.lng() + lngSpan * Math.random());
-
-        var marker = new google.maps.Marker({
-            position: location,
-            map: map
-        });
-
-        markers.push(marker);
-    }
-
-  return (
-    <div style={{ height: '500px', width: '100%' }}>
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyALF4Lazl_RdjGP5xn7t0CeHRru8vB2ml4" }}
-        defaultCenter={defaultProps.center}
-        defaultZoom={defaultProps.zoom}
-      >
-        <comp
-          lat={59.955413}
-          lng={30.337844}
-          text="My Marker"
-        />
-      </GoogleMapReact>
-    </div>
-  );
-}
+    return isLoaded ? (
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={1}
+          onLoad={onLoad}
+          onUnmount={onUnmount}
+        >
+          { props.isMarkerShown && <Link to="explore"><Marker position={{ lat: 43.634657, lng: -79.522378 }} /></Link>/* Child components, such as markers, info windows, etc. */ }
+          <></>
+        </GoogleMap>
+    ) : <></>
+  }
+export default SimpleMap;
