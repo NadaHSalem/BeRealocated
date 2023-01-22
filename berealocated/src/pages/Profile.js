@@ -21,9 +21,6 @@ const Explore = () => {
       const email = user.email;
       const photoURL = user.photoURL;
       const emailVerified = user.emailVerified;
-      if(displayName !== null){
-        document.getElementById("display").innerHTML = displayName.toString();
-      }
       const uid = user.uid;
     }
     return (
@@ -36,7 +33,6 @@ const Explore = () => {
             onClick={logout}>
                 Logout
             </button>
-            <h1 id="display">_</h1>
             </div>
     )
 };

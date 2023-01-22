@@ -13,6 +13,11 @@ import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
     lat: 43.634657,
       lng: -79.522378
   };
+  const tocapture = () => {
+    return (
+      <Link to="explore"/>
+    );
+  }
   function SimpleMap(props) {
     const { isLoaded } = useJsApiLoader({
       id: 'google-map-script',
@@ -21,7 +26,6 @@ import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
     const [map, setMap] = React.useState(null)
     const onLoad = React.useCallback(function callback(map) {
       const bounds = new window.google.maps.LatLngBounds(center);
-      map.fitBounds(bounds);
       setMap(map)
     }, [])
     const onUnmount = React.useCallback(function callback(map) {
@@ -36,7 +40,7 @@ import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
           onLoad={onLoad}
           onUnmount={onUnmount}
         >
-          { props.isMarkerShown && <Link to="explore"><Marker position={{ lat: 43.634657, lng: -79.522378 }} /></Link>/* Child components, such as markers, info windows, etc. */ }
+          { props.isMarkerShown && <Marker clickable={true} onClick={tocapture} position={{ lat: 43.634657, lng: -79.522378 }} />/* Child components, such as markers, info windows, etc. */ }
           <></>
         </GoogleMap>
     ) : <></>
