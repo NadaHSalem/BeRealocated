@@ -4,7 +4,7 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './MyTask.css';
 import SimpleMap from '../content/map';
-import { Routes, Route, useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { getAuth } from 'firebase/auth';
 import { getDownloadURL, ref } from 'firebase/storage';
 import storage from '../firebase_setup/firebase';
