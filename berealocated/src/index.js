@@ -8,7 +8,7 @@ import Explore from './pages/Explore';
 import Nav from './content/Nav';
 import Profile from './pages/Profile'
 import MyTask from './pages/MyTask';
-import App from './App';
+import GPS from './content/gps';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +16,7 @@ root.render(
                 <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Nav />}>
+                        <Route path="gps" element={<GPS />}/>
                         <Route path="home" element={<Home />}/>
                         <Route path="profile" element={<Profile />}/>
                         <Route path="Explore" element={<Explore />} />

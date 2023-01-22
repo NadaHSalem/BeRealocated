@@ -20,7 +20,7 @@ const Explore = () => {
               const img = document.getElementById(imgId);
               img.setAttribute('src', url);
               imgId++;
-              setTimeout(1000);
+              setTimeout(100);
             })
               .catch((error) => {
                 // Handle any errors

@@ -59,7 +59,6 @@
   font-weight: bold;
   height: 44px;
   line-height: 1.15;
-  margin: 12px 0 0;
   outline: none;
   overflow: hidden;
   padding: 0 0px;
@@ -74,7 +73,8 @@
   width: 90%;
   border-radius: 15px;
   transition-duration: 0.4s;
-  margin-left: 25px;
+  margin-left: 5%;
+
 }
 
   .button-camera:hover {
@@ -94,3 +94,19 @@
     opacity: 0%;
   }
   
+  #lat{
+
+    text-align: center;
+    display: inline;
+    color: white;
+    width: 50%;
+    margin-left: 32%;
+  }
+  #long{
+    padding-left: 10px;
+    text-align:center;
+    display: inline;
+    color: white;
+    width: 50%;
+    margin: auto;
+  }

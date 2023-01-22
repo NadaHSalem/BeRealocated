@@ -7,8 +7,8 @@ import { Component } from "react";
 import { geolocated } from "react-geolocated";
 
   const containerStyle = {
-    width: '500px',
-    height: '500px'
+    width: '400px',
+    height: '400px'
   };
   const defaultPoint = {
     lat:43.634657,

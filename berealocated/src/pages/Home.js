@@ -81,8 +81,8 @@ const Home = () => {
           <img src={img} alt="screenshot" />
           <button className={styles.retake} onClick={() => setImg(null)}>&#10006;</button>
           <button className={styles.send} onClick={handleUpload}><i class="material-icons">send</i></button>
-            <p>{percent} "% done"</p>
         </>
+        
       )}
     </div>
   );

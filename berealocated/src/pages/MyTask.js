@@ -4,12 +4,19 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './MyTask.css';
 import SimpleMap from '../content/map';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, Link } from 'react-router-dom';
 import { getAuth } from 'firebase/auth';
 import { getDownloadURL, ref } from 'firebase/storage';
 import storage from '../firebase_setup/firebase';
-import Home from './Home';
+import GPS from '../content/gps';
 
+const points = [
+  { name: "1", position: { lat: 43.634657, lng: -79.522378 } },
+  { name: "2", position: { lat: 43.642567, lng: -79.387054 } },
+  { name: "3", position: { lat: 43.725600, lng: -79.452700 } },
+  { name: "4", position: { lat: 43.754300, lng: -79.517300 } },
+  { name: "5", position: { lat: 43.592760, lng: -79.643437 } },
+]
 
 function MyTask() {
   const [date, setDate] = useState(new Date())
@@ -17,8 +24,20 @@ function MyTask() {
   const today = new Date();
 
   const navigateCamera = () => {
-    let path = 'Home';
-    navigate('/Home');
+    const lat = document.getElementById("lat");
+    const long = document.getElementById("long");
+    navigate('home');
+    // we are not proud of this but time is running out
+    if ((lat === points[1]["position"][0] || lat === points[2]["position"][0] || lat ===points[3]["position"][0] || lat === points[4]["position"][0] || lat === points[5]["position"][0])&& 
+    (long === points[1]["position"][1] || long === points[2]["position"][1] || long === points[3]["position"][1] || long === points[4]["position"][1] || long === points[5]["position"][1])){
+      navigate('home');
+    }
+    else{
+      navigate('home');
+      alert("You are not at this location.")  
+      
+    }
+
   };
   const user = getAuth().currentUser;
   if (user !== null) {
@@ -64,13 +83,13 @@ function MyTask() {
       <div className="task-header">Upcoming Tasks</div>
       <div className="body-text">View completed and today's assigned location on a map.</div>
       <SimpleMap />
-      <button className="button-camera" onClick={navigateCamera}>Take a picture</button>
+      <div  className='text-center'>Your current location is</div><GPS></GPS><button className="button-camera" onClick={navigateCamera}>Take a picture</button>
       <div className="calendar-container">
         <div className="task-header">My Previous Tasks</div>
         <Calendar className="e.calendar" onChange={setDate} value={date} />
       </div>
       <div id="taskcomplete" className='text-center'>
-        You completed the task on {date.toDateString()}! Here is your image:
+        If you completed the task on {date.toDateString()}, your image will appear below:
         <img id="view" className='image-style' alt=" Nothing Here"></img>
       </div>
     </div>
