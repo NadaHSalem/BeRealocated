@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import google from 'google-map-react';
 import { GoogleMap, useJsApiLoader, Marker, mar } from '@react-google-maps/api';
+import { Component } from "react";
+import { geolocated } from "react-geolocated";
 
   const containerStyle = {
     width: '500px',
@@ -12,10 +14,13 @@ import { GoogleMap, useJsApiLoader, Marker, mar } from '@react-google-maps/api';
     lat:43.634657,
     lng: -79.522378
   };
+  //var lat = geolocated;
   const points = [
     {name: "1", position: {lat: 43.634657, lng:-79.522378}},
-    {position: {lat: 43.642567, lng:-79.387054}},
-      {position: {lat: 43.725600, lng:-79.4527}}
+    {name: "2", position: {lat: 43.642567, lng:-79.387054}},
+    {name: "3", position: {lat: 43.725600, lng:-79.452700}},
+    {name: "4", position: {lat: 43.754300, lng:-79.517300}},
+    {name: "5", position: {lat: 43.592760, lng:-79.643437}},
   ]
   function SimpleMap(props) {
     const { isLoaded } = useJsApiLoader({
@@ -26,28 +31,11 @@ import { GoogleMap, useJsApiLoader, Marker, mar } from '@react-google-maps/api';
     const onLoad = React.useCallback(function callback(map) {
       map.setZoom(10)
       setMap(map)
-    }, [])
+    }, []);
     const onUnmount = React.useCallback(function callback(map) {
       setMap(null)
-    }, [])
-    var markers = [];
-    let i = 0;
-    var marker = useState(null);
-    const Iterate = () =>
-    {
+    }, []);
 
-      const latLngArray = [];
-      for (i = 0; i < points.length-1; i++){
-        const location = new google.maps(points[i][0], points[i][1]);
-        latLngArray.push(location);
-        marker = new google.maps.Marker({
-          position: location,
-          map: map
-      });
-      markers.push(marker);
-      }
-
-    }
     return isLoaded ? (
         <GoogleMap
           mapContainerStyle={containerStyle}
@@ -56,15 +44,14 @@ import { GoogleMap, useJsApiLoader, Marker, mar } from '@react-google-maps/api';
           onLoad={onLoad}
           onUnmount={onUnmount}
         >
-          
           {points.map(({ id, name, position }) => (
         <Marker
           key={id}
           position={position}
-          label={name}
-        >
-        </Marker>
-      ))}
+          label={name}>
+        </Marker>))}
+
+
         
         </GoogleMap>
         

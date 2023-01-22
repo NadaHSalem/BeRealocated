@@ -26,11 +26,9 @@ const Explore = () => {
     return (
         <div className={styles.profile}>
             <center>
-            <button style={{"marginTop" : "200px"}} 
-                onClick={signin}>Sign In with Google</button>
+            <button className ={styles.top} onClick={signin}>Sign In with Google</button>
             </center>
-            <button style={{"marginLeft" : "20px"}} 
-            onClick={logout}>
+            <button className ={styles.bottom} onClick={logout}>
                 Logout
             </button>
             </div>
