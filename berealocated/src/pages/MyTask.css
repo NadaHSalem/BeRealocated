@@ -11,11 +11,22 @@
 }
 
 .text-center {
+    z-index: 2;
+    opacity: 100%;
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-align: center;
 }
+
+.text-null {
+    opacity: 0%;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
 
 .e-calendar {
     background-color: rgb(185, 253, 255);
@@ -73,6 +84,9 @@
   }
 
   .image-style {
+    display: block;
+    width: 50%;
+    margin: auto;
     opacity: 100%;
   }
 

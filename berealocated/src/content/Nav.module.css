@@ -57,7 +57,15 @@
     right: 45px;
     width: 30px;
     height: 30px;
-    position: fixed;
+    position:absolute;
     display: inline;
     color: white;
+}
+
+.profileedge{
+    display: inline;
+    color: aliceblue;
+    background-color: white;
+    width: 10px;
+    height: 10px;
 }

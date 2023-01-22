@@ -38,7 +38,7 @@ const Explore = () => {
   !!! in JS
   const Diplay = (src, id, className) => {
         return(
-          <img src={src} id = {id} alt="nothing Here"></img>
+          <img src={src} id = {id} alt="Nothing here yet! Here"></img>
         );
       }
   
@@ -54,16 +54,16 @@ const Explore = () => {
   return (
     <div className={styles.body}>
 
-      <img className={styles.image} id={0} alt="nothing"></img>
-      <img className={styles.image} id={1} alt="nothing"></img>
-      <img className={styles.image} id={2} alt="nothing"></img>
-      <img className={styles.image} id={3} alt="nothing"></img>
-      <img className={styles.image} id={4} alt="nothing"></img>
-      <img className={styles.image} id={5} alt="nothing"></img>
-      <img className={styles.image} id={6} alt="nothing"></img>
-      <img className={styles.image} id={7} alt="nothing"></img>
-      <img className={styles.image} id={8} alt="nothing"></img>
-      <img className={styles.image} id={9} alt="nothing"></img>
+      <img className={styles.image} id={0} alt="Nothing here yet!"></img>
+      <img className={styles.image} id={1} alt="Nothing here yet!"></img>
+      <img className={styles.image} id={2} alt="Nothing here yet!"></img>
+      <img className={styles.image} id={3} alt="Nothing here yet!"></img>
+      <img className={styles.image} id={4} alt="Nothing here yet!"></img>
+      <img className={styles.image} id={5} alt="Nothing here yet!"></img>
+      <img className={styles.image} id={6} alt="Nothing here yet!"></img>
+      <img className={styles.image} id={7} alt="Nothing here yet!"></img>
+      <img className={styles.image} id={8} alt="Nothing here yet!"></img>
+      <img className={styles.image} id={9} alt="Nothing here yet!"></img>
     </div>
   );
 }

@@ -16,11 +16,10 @@ root.render(
                 <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Nav />}>
-                        <Route index element={<App />}/>
                         <Route path="home" element={<Home />}/>
                         <Route path="profile" element={<Profile />}/>
                         <Route path="Explore" element={<Explore />} />
-                        <Route path="MyTask" element={<MyTask />} />
+                        <Route index element={<MyTask />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
